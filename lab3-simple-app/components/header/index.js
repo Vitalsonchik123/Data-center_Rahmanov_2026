@@ -8,14 +8,14 @@ export class HeaderComponent {
             `
             <nav class="navbar navbar-expand-lg bg-success mb-4">
                 <div class="container-fluid">
-                    <a class="navbar-brand text-white" href="#"> Маркетплейс акций</a>
+                    <a class="navbar-brand text-white" href="#"> Датацентр. Комплектующие ПК</a>
                     <div class="collapse navbar-collapse">
                         <ul class="navbar-nav ms-auto">
                             <li class="nav-item me-2">
                                 <button id="home-button" class="btn btn-outline-light"> Домой</button>
                             </li>
                             <li class="nav-item">
-                                <button id="orders-button" class="btn btn-outline-light"> Датацентр. Комплектующие ПК</button>
+                                <button id="orders-button" class="btn btn-outline-light"> Заказы комплектующих</button>
                             </li>
                         </ul>
                     </div>
