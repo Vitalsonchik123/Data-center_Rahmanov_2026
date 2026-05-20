@@ -8,7 +8,7 @@ export class HeaderComponent {
             `
             <nav class="navbar navbar-expand-lg bg-success mb-4">
                 <div class="container-fluid">
-                    <a class="navbar-brand text-white" href="#"> Маркетплейс акций</a>
+                    <a class="navbar-brand text-white" href="#"> Датацентр. Комплектующие для ПК</a>
                     <div class="collapse navbar-collapse">
                         <ul class="navbar-nav ms-auto">
                             <li class="nav-item me-2">
