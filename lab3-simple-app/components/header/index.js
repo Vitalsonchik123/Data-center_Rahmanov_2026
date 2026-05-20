@@ -15,7 +15,7 @@ export class HeaderComponent {
                                 <button id="home-button" class="btn btn-outline-light"> Домой</button>
                             </li>
                             <li class="nav-item">
-                                <button id="orders-button" class="btn btn-outline-light"> Заказы комплектующих</button>
+                                <button id="orders-button" class="btn btn-outline-light"> Датацентр. Комплектующие ПК</button>
                             </li>
                         </ul>
                     </div>
