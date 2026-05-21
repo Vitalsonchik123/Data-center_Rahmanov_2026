@@ -72,7 +72,15 @@
       "sale30",
       "saleAll"
     ],
-    "modelPath": "./models/computer.glb"
+    "modelPath": "./models/computer.glb",
+    "comments": [
+      {
+        "id": 1,
+        "author": "Виталий",
+        "text": "Оставил комментарий",
+        "createdAt": "2026-05-21T05:38:35.230Z"
+      }
+    ]
   },
   {
     "id": 4,
