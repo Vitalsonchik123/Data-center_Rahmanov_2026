@@ -30,10 +30,7 @@ try {
             discount: 50,
             promoCodes: ["sale", "sale50", "screen"],
             modelPath: "./models/computer.glb",
-            comments: [
-                { id: 1, author: "Алексей", text: "Отличная акция! Уже присмотрел монитор.", createdAt: new Date().toISOString() },
-                { id: 2, author: "Мария", text: "А распространяется на игровые мониторы?", createdAt: new Date().toISOString() }
-            ]
+            comments: []
         },
         {
             id: 2,
