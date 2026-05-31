@@ -4,7 +4,7 @@ export class StockUrls {
     }
 
     getStocks(search = '') {
-        let url = `${this.baseUrl}/stocks`;
+        let url = `${this.baseUrl}/datacenter`;
         if (search) {
             url += `?search=${encodeURIComponent(search)}`;
         }
@@ -12,23 +12,23 @@ export class StockUrls {
     }
 
     getStockById(id) {
-        return `${this.baseUrl}/stocks/${id}`;
+        return `${this.baseUrl}/datacenter/${id}`;
     }
 
     createStock() {
-        return `${this.baseUrl}/stocks`;
+        return `${this.baseUrl}/datacenter`;
     }
 
     removeStockById(id) {
-        return `${this.baseUrl}/stocks/${id}`;
+        return `${this.baseUrl}/datacenter/${id}`;
     }
 
     updateStockById(id) {
-        return `${this.baseUrl}/stocks/${id}`;
+        return `${this.baseUrl}/datacenter/${id}`;
     }
 
     addComment(id) {
-    return `${this.baseUrl}/stocks/${id}/comments`;
+    return `${this.baseUrl}/datacenter/${id}/comments`;
 }
 }
 
