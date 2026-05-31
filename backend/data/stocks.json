@@ -1,15 +1,15 @@
 [
   {
     "id": 1,
-    "src": "https://3dnews.ru/assets/external/illustrations/2014/12/29/907415/ASUS-PQ321QE.jpg",
-    "title": "Монитор Maifan MF238-1, чёрный",
-    "text": "Скидка до 50% на все мониторы!",
-    "category": "комплектующие",
+    "src": "https://habrastorage.org/getpro/habr/upload_files/05b/838/b74/05b838b741410205b38d8ec12e1029af.jpeg",
+    "title": "Аренда виртуальных серверов (VPS / VDS)",
+    "text": "Предоставление вычислительных мощностей на базе виртуальных машин.",
+    "category": "Аренда",
     "discount": 50,
     "promoCodes": [
       "sale",
       "sale50",
-      "screen"
+      "rent"
     ],
     "modelPath": "./models/computer.glb",
     "comments": [
@@ -35,15 +35,15 @@
   },
   {
     "id": 2,
-    "src": "https://s.a-5.ru/i/file/161/7/4f/73/4f73f292cd213e35.jpg",
-    "title": "Флешка JUST Зелёная 16Гб",
-    "text": "Купи 2 флешки - получи 3-ю в подарок!",
-    "category": "аксессуары",
+    "src": "https://m.seonews.ru/upload/medialibrary/93a/93a89d800fd5e79cbed70fae722af462.jpg",
+    "title": "Виртуальный хостинг",
+    "text": "Размещение сайтов на общем физическом сервере провайдера",
+    "category": "хостинг",
     "discount": 10,
     "promoCodes": [
-      "flash",
+      "virt",
       "sale10",
-      "drive"
+      "host"
     ],
     "modelPath": "./models/computer.glb",
     "comments": [
@@ -63,14 +63,14 @@
   },
   {
     "id": 3,
-    "src": "https://fragstore.ru/images/detailed/59/razer-viper-2-1000x1000.jpg",
-    "title": "Компьютерная мышь Razer Viper, чёрная",
-    "text": "Скидка 30% на весь ассортимент!",
-    "category": "комплектующие",
+    "src": "https://www.ucord.ru/uploads/storage/Aksessuari-k-servernim-shkafam-i-stoikam.jpg",
+    "title": "Аренда места в стойке",
+    "text": "Предоставление места (юнитов) в серверной стойке или целой стойки/шкафа для оборудования клиента",
+    "category": "Размещение оборудования",
     "discount": 30,
     "promoCodes": [
       "sale30",
-      "saleAll"
+      "colly"
     ],
     "modelPath": "./models/computer.glb",
     "comments": [
@@ -84,10 +84,10 @@
   },
   {
     "id": 4,
-    "src": "https://hiper-power.com/upload/iblock/fde/WeChat%20Image_20200505084437.jpg",
-    "title": "Вентилятор для корпуса HIPER HCF1251-03-RGB",
-    "text": "",
-    "category": "акции",
+    "src": "https://skladovka.md/wp-content/uploads/2021/12/storage-small-2.png",
+    "title": "Аренда выделенной зоны",
+    "text": "Аренда отдельного изолированного помещения или модульного отсека для размещения особо крупных или критически важных IT-систем",
+    "category": "Размещение оборудования",
     "discount": 5,
     "promoCodes": [
       "fan"
@@ -96,13 +96,13 @@
   },
   {
     "id": 5,
-    "src": "https://hiper-power.com/upload/iblock/4c4/HG302%20(1)_1000x1000.jpg",
-    "title": "Игровой корпус HIPER HG302 SHADOW",
-    "text": "На 30% дешевле, при заказе готовой сборки!",
-    "category": "акции",
+    "src": "https://videoprofspb.ru/template/assets/img/articles/788/_utp_wires.jpg",
+    "title": "Организация кроссировки",
+    "text": "Прокладка внутренних медных или оптических линий связи между стойками или оборудованием провайдера",
+    "category": "установка",
     "discount": 30,
     "promoCodes": [
-      "PC",
+      "cross",
       "build"
     ],
     "modelPath": "./models/computer.glb"
