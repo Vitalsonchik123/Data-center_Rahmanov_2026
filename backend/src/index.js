@@ -6,7 +6,7 @@ const app = express();
 const port = 3000;
 
 // Путь к файлу для хранения данных
-const dataPath = path.join(__dirname, '../data/stocks.json');
+const dataPath = path.join(__dirname, '../data/datacenter.json');
 
 // Обеспечиваем наличие папки data
 if (!fs.existsSync(path.dirname(dataPath))) {
