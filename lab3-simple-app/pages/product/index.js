@@ -32,7 +32,7 @@ export class ProductPage {
         return `
             <div id="product-page" class="container py-3">
                 <div class="mb-3">
-                    <button id="back-button" class="btn btn-orange">Назад к акциям</button>
+                    <button id="back-button" class="btn btn-orange">Назад</button>
                 </div>
                 <div class="row">
                     <div class="col-md-6">

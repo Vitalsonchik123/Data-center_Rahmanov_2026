@@ -29,7 +29,7 @@ export class MainPage {
                             <button id="search-button" class="btn btn-success w-100"> Поиск</button>
                         </div>
                         <div class="col-md-5 text-end">
-                            <button id="add-button" class="btn btn-orange w-100"> Добавить акцию</button>
+                            <button id="add-button" class="btn btn-orange w-100"> Добавить услугу</button>
                         </div>
                     </div>
                     <div class="row mb-4">
