@@ -101,7 +101,7 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, '../public')));
 
 // GET /stocks – список всех карточек (с поддержкой фильтрации по названию)
-app.get('/stocks', (req, res) => {
+app.get('/database', (req, res) => {
     const search = req.query.search;
     let result = stocks;
     if (search && search.trim() !== '') {
@@ -114,7 +114,7 @@ app.get('/stocks', (req, res) => {
 });
 
 // GET /stocks/:id – одна карточка (включая комментарии)
-app.get('/stocks/:id', (req, res) => {
+app.get('/database/:id', (req, res) => {
     const id = parseInt(req.params.id);
     const stock = stocks.find(s => s.id === id);
     if (stock) res.json(stock);
@@ -122,7 +122,7 @@ app.get('/stocks/:id', (req, res) => {
 });
 
 // POST /stocks – создание новой карточки
-app.post('/stocks', (req, res) => {
+app.post('/database', (req, res) => {
     const { title, text, src, category, discount, promoCodes, modelPath } = req.body;
     if (!title || !text) {
         return res.status(400).json({ error: "Missing required fields: title, text" });
@@ -145,7 +145,7 @@ app.post('/stocks', (req, res) => {
 });
 
 // PATCH /stocks/:id – обновление карточки
-app.patch('/stocks/:id', (req, res) => {
+app.patch('/database/:id', (req, res) => {
     const id = parseInt(req.params.id);
     const index = stocks.findIndex(s => s.id === id);
     if (index === -1) return res.status(404).json({ error: "Not found" });
@@ -159,7 +159,7 @@ app.patch('/stocks/:id', (req, res) => {
 });
 
 // DELETE /stocks/:id – удаление карточки
-app.delete('/stocks/:id', (req, res) => {
+app.delete('/database/:id', (req, res) => {
     const id = parseInt(req.params.id);
     const index = stocks.findIndex(s => s.id === id);
     if (index === -1) return res.status(404).json({ error: "Not found" });
@@ -169,7 +169,7 @@ app.delete('/stocks/:id', (req, res) => {
 });
 
 // POST /stocks/:id/comments – добавить комментарий к карточке
-app.post('/stocks/:id/comments', (req, res) => {
+app.post('/database/:id/comments', (req, res) => {
     const id = parseInt(req.params.id);
     const stock = stocks.find(s => s.id === id);
     if (!stock) return res.status(404).json({ error: "Stock not found" });
