@@ -9,16 +9,16 @@ export class OrdersPage {
 
     getInitialOrders() {
         return [
-            { id: 1, name: "Процессор AMD Ryzen 9 7950X" },
-            { id: 2, name: "Видеокарта NVIDIA GeForce RTX 4080 SUPER" },
-            { id: 3, name: "Оперативная память DDR5 32 ГБ (2x16)" },
-            { id: 4, name: "SSD NVMe Samsung 990 PRO 2 ТБ" },
-            { id: 5, name: "Материнская плата ASUS ROG STRIX B650E-F" },
-            { id: 6, name: "Блок питания Corsair RM850x 850W" },
-            { id: 7, name: "Кулер Noctua NH-D15" },
-            { id: 8, name: "Корпус Fractal Design North" },
-            { id: 9, name: "Монитор ASUS ROG Swift 27\" 240 Гц" },
-            { id: 10, name: "Клавиатура механическая Logitech G Pro X" }
+            { id: 1, name: "Процессор AMD Ryzen 9 7950X", date: "2025-03-10" },
+            { id: 2, name: "Видеокарта NVIDIA GeForce RTX 4080 SUPER", date: "2025-03-12" },
+            { id: 3, name: "Оперативная память DDR5 32 ГБ (2x16)", date: "2025-03-15" },
+            { id: 4, name: "SSD NVMe Samsung 990 PRO 2 ТБ", date: "2025-03-18" },
+            { id: 5, name: "Материнская плата ASUS ROG STRIX B650E-F", date: "2025-03-20" },
+            { id: 6, name: "Блок питания Corsair RM850x 850W", date: "2025-03-22" },
+            { id: 7, name: "Кулер Noctua NH-D15", date: "2025-03-25" },
+            { id: 8, name: "Корпус Fractal Design North", date: "2025-03-27" },
+            { id: 9, name: "Монитор ASUS ROG Swift 27\" 240 Гц", date: "2025-03-30" },
+            { id: 10, name: "Клавиатура механическая Logitech G Pro X", date: "2025-04-01" }
         ];
     }
 
@@ -38,9 +38,11 @@ export class OrdersPage {
         if (this.orders.length === 0) return;
         const firstOrder = this.orders[0];
         const newId = Math.max(...this.orders.map(o => o.id)) + 1;
+        const today = new Date().toISOString().slice(0, 10);
         const newOrder = {
             id: newId,
-            name: `${firstOrder.name} (копия)`
+            name: `${firstOrder.name} (копия)`,
+            date: today
         };
         this.orders.push(newOrder);
         this.renderOrders();
@@ -59,13 +61,13 @@ export class OrdersPage {
             <div class="order-card">
                 <div class="order-number">Заказ #${order.id}</div>
                 <div class="order-name">${order.name}</div>
+                <div class="order-date">Дата заказа: ${order.date}</div>
                 <button class="btn-delete-order" data-id="${order.id}">🗑 Удалить</button>
             </div>
         `).join('');
 
-        // Добавляем слушатели на кнопки удаления
         document.querySelectorAll('.btn-delete-order').forEach(btn => {
-            btn.addEventListener('click', (e) => {
+            btn.addEventListener('click', () => {
                 const id = parseInt(btn.getAttribute('data-id'));
                 this.deleteOrder(id);
             });
@@ -79,12 +81,8 @@ export class OrdersPage {
 
     render() {
         this.parent.innerHTML = '';
-
         const header = new HeaderComponent(this.parent);
-        header.render(this.goToHome.bind(this), () => {
-            // Обработчик для кнопки "Заказы комплектующих" – остаёмся на этой же странице
-        });
-
+        header.render(this.goToHome.bind(this), () => {});
         const html = this.getHTML();
         this.parent.insertAdjacentHTML('beforeend', html);
 
