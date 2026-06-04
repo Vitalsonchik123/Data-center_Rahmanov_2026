@@ -1,9 +1,9 @@
 [
   {
     "id": 1,
-    "src": "https://habrastorage.org/getpro/habr/upload_files/05b/838/b74/05b838b741410205b38d8ec12e1029af.jpeg",
-    "title": "Аренда виртуальных серверов (VPS / VDS)",
-    "text": "Предоставление вычислительных мощностей на базе виртуальных машин.",
+    "src": "https://habrastorage.org/getpro/habr/post_images/991/da5/638/991da56383eec311a47c5e14c08ee465.jpg",
+    "title": "Системы хранения данных (СХД)",
+    "text": " Дисковые массивы и СХД-серверы, предназначенные для надежного хранения больших объемов информации.",
     "category": "Аренда",
     "discount": 50,
     "promoCodes": [
@@ -35,9 +35,9 @@
   },
   {
     "id": 2,
-    "src": "https://m.seonews.ru/upload/medialibrary/93a/93a89d800fd5e79cbed70fae722af462.jpg",
-    "title": "Виртуальный хостинг",
-    "text": "Размещение сайтов на общем физическом сервере провайдера",
+    "src": "https://image.made-in-china.com/2f0j00NveiQPTrJtGm/Netengine-8000-M1a-Enterprise-Core-Router-Large-Bandwidth-Data-Center-Router-WiFi.webp",
+    "title": "Маршрутизатор",
+    "text": "Высокопроизводительное устройство уровня ядра или границы (Edge), обрабатывающее петабайты трафика",
     "category": "хостинг",
     "discount": 10,
     "promoCodes": [
@@ -63,9 +63,9 @@
   },
   {
     "id": 3,
-    "src": "https://selectel.ru/wp-content/uploads/ZVT2_2.jpg",
-    "title": "Аренда места в стойке",
-    "text": "Предоставление места (юнитов) в серверной стойке или целой стойки/шкафа для оборудования клиента",
+    "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0CQS1asFBXukW92ex6YZKv2uchG2PbDChmQ&s",
+    "title": "Коммутатор",
+    "text": "Высокопроизводительное сетевое устройство, объединяющее серверы и системы хранения данных",
     "category": "Размещение оборудования",
     "discount": 30,
     "promoCodes": [
@@ -84,9 +84,9 @@
   },
   {
     "id": 4,
-    "src": "https://skladovka.md/wp-content/uploads/2021/12/storage-small-2.png",
-    "title": "Аренда выделенной зоны",
-    "text": "Аренда отдельного изолированного помещения или модульного отсека для размещения особо крупных или критически важных IT-систем",
+    "src": "https://itelon.ru/upload/img/18-12-2020/1.jpg",
+    "title": "Вычислительный узел",
+    "text": "Отдельный многопроцессорный сервер или компьютер в составе вычислительного кластера",
     "category": "Размещение оборудования",
     "discount": 5,
     "promoCodes": [
@@ -96,9 +96,9 @@
   },
   {
     "id": 5,
-    "src": "https://videoprofspb.ru/template/assets/img/articles/788/_utp_wires.jpg",
-    "title": "Организация кроссировки",
-    "text": "Прокладка внутренних медных или оптических линий связи между стойками или оборудованием провайдера",
+    "src": "https://rk1.ru/wp-content/uploads/2018/08/4-500-500.jpg",
+    "title": "Стойка датацентра",
+    "text": "Стандартизированная металлическая конструкция, предназначенная для компактного и безопасного размещения серверов, систем хранения и коммутационного оборудования",
     "category": "установка",
     "discount": 30,
     "promoCodes": [
