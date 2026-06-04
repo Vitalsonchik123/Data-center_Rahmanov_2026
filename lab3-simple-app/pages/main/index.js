@@ -4,7 +4,7 @@ import { ProductPage } from "../product/index.js";
 import { EditPage } from "../edit/index.js";
 import { OrdersPage } from "../orders/index.js";
 import { ajax } from "../../modules/ajax.js";
-import { stockUrls } from "../../modules/stockUrls.js";
+import { datacenterUrls } from "../../modules/datacenterUrls.js";
 
 export class MainPage {
     constructor(parent) {
@@ -92,8 +92,8 @@ export class MainPage {
     }
 
     // Загрузка карточек с сервера (с поддержкой поиска)
-    loadStocks(search = '') {
-        const url = stockUrls.getStocks(search);
+    loadDatacenter(search = '') {
+        const url = datacenterUrls.getDatacenter(search);
         ajax.get(url, (data, status) => {
             if (status === 200 && data) {
                 this.products = data;
@@ -113,7 +113,7 @@ export class MainPage {
     performSearch() {
         const searchInput = this.getFilterInput();
         const searchText = searchInput ? searchInput.value.trim() : '';
-        this.loadStocks(searchText);
+        this.loadDatacenter(searchText);
     }
 
     renderProducts() {
@@ -146,9 +146,9 @@ export class MainPage {
     }
 
     deleteProduct(id) {
-        ajax.delete(stockUrls.removeStockById(id), (data, status) => {
+        ajax.delete(datacenterUrls.removeDatacenterById(id), (data, status) => {
             if (status === 204) {
-                this.loadStocks();  // перезагружаем список (без поиска)
+                this.loadDatacenter()();  // перезагружаем список (без поиска)
             } else {
                 alert('Ошибка удаления');
             }
@@ -271,6 +271,6 @@ export class MainPage {
             });
         }
 
-        this.loadStocks(); // Начальная загрузка всех карточек (без поиска)
+        this.loadDatacenter(); // Начальная загрузка всех карточек (без поиска)
     }
 }

@@ -4,7 +4,7 @@ import { ThreeModelComponent } from "../../components/3Dmodel/index.js";
 import { MainPage } from "../main/index.js";
 import { OrdersPage } from "../orders/index.js";
 import { ajax } from "../../modules/ajax.js";
-import { stockUrls } from "../../modules/stockUrls.js";
+import { datacenterUrls } from "../../modules/datacenterUrls.js";
 
 export class ProductPage {
     constructor(parent, id) {
@@ -36,7 +36,7 @@ export class ProductPage {
     }
 
     getData() {
-        ajax.get(stockUrls.getStockById(this.id), (data, status) => {
+        ajax.get(datacenterUrls.getDatacenterById(this.id), (data, status) => {
             if (status === 200 && data) {
                 this.renderData(data);
             } else {

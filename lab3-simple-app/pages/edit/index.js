@@ -1,7 +1,7 @@
 import { HeaderComponent } from "../../components/header/index.js";
 import { MainPage } from "../main/index.js";
 import { ajax } from "../../modules/ajax.js";
-import { stockUrls } from "../../modules/stockUrls.js";
+import { datacenterUrls } from "../../modules/datacenterUrls.js";
 
 export class EditPage {
     constructor(parent, id = null) {
@@ -50,7 +50,7 @@ export class EditPage {
     loadData() {
         if (!this.id) return Promise.resolve();
         return new Promise((resolve, reject) => {
-            ajax.get(stockUrls.getStockById(this.id), (data, status) => {
+            ajax.get(DatacenterUrls.getDatacenterById(this.id), (data, status) => {
                 if (status === 200 && data) {
                     this.stock = data;
                     resolve(data);
@@ -85,7 +85,7 @@ export class EditPage {
     save(event) {
         event.preventDefault();
         const data = this.getFormData();
-        const url = this.id ? stockUrls.updateStockById(this.id) : stockUrls.createStock();
+        const url = this.id ? DatacenterUrls.updateDatacenterById(this.id) : DatacenterUrls.createDatacenter();
         const method = this.id ? 'patch' : 'post';
 
         ajax[method](url, data, (responseData, status) => {
