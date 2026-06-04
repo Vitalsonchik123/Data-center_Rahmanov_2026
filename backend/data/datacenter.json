@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1,
+    "src": "https://habrastorage.org/getpro/habr/upload_files/05b/838/b74/05b838b741410205b38d8ec12e1029af.jpeg",
+    "title": "Аренда виртуальных серверов (VPS / VDS)",
+    "text": "Предоставление вычислительных мощностей на базе виртуальных машин.",
+    "category": "Аренда",
+    "discount": 50,
+    "promoCodes": [
+      "sale",
+      "sale50",
+      "rent"
+    ],
+    "modelPath": "./models/computer.glb",
+    "comments": [
+      {
+        "id": 1,
+        "author": "Виталий",
+        "text": "123",
+        "createdAt": "2026-05-10T13:36:29.584Z"
+      },
+      {
+        "id": 2,
+        "author": "Алексей",
+        "text": "Комментарий",
+        "createdAt": "2026-05-10T13:36:53.898Z"
+      },
+      {
+        "id": 3,
+        "author": "Тест123",
+        "text": "Проверка",
+        "createdAt": "2026-05-10T15:22:37.500Z"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "src": "https://m.seonews.ru/upload/medialibrary/93a/93a89d800fd5e79cbed70fae722af462.jpg",
+    "title": "Виртуальный хостинг",
+    "text": "Размещение сайтов на общем физическом сервере провайдера",
+    "category": "хостинг",
+    "discount": 10,
+    "promoCodes": [
+      "virt",
+      "sale10",
+      "host"
+    ],
+    "modelPath": "./models/computer.glb",
+    "comments": [
+      {
+        "id": 1,
+        "author": "Аноним",
+        "text": "Очень хорошая флешка",
+        "createdAt": "2026-05-10T13:54:39.075Z"
+      },
+      {
+        "id": 2,
+        "author": "Евгений",
+        "text": "Комментарий",
+        "createdAt": "2026-05-21T04:29:08.445Z"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "src": "https://selectel.ru/wp-content/uploads/ZVT2_2.jpg",
+    "title": "Аренда места в стойке",
+    "text": "Предоставление места (юнитов) в серверной стойке или целой стойки/шкафа для оборудования клиента",
+    "category": "Размещение оборудования",
+    "discount": 30,
+    "promoCodes": [
+      "sale30",
+      "colly"
+    ],
+    "modelPath": "./models/computer.glb",
+    "comments": [
+      {
+        "id": 1,
+        "author": "Виталий",
+        "text": "Оставил комментарий",
+        "createdAt": "2026-05-21T05:38:35.230Z"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "src": "https://skladovka.md/wp-content/uploads/2021/12/storage-small-2.png",
+    "title": "Аренда выделенной зоны",
+    "text": "Аренда отдельного изолированного помещения или модульного отсека для размещения особо крупных или критически важных IT-систем",
+    "category": "Размещение оборудования",
+    "discount": 5,
+    "promoCodes": [
+      "fan"
+    ],
+    "modelPath": "./models/computer.glb"
+  },
+  {
+    "id": 5,
+    "src": "https://videoprofspb.ru/template/assets/img/articles/788/_utp_wires.jpg",
+    "title": "Организация кроссировки",
+    "text": "Прокладка внутренних медных или оптических линий связи между стойками или оборудованием провайдера",
+    "category": "установка",
+    "discount": 30,
+    "promoCodes": [
+      "cross",
+      "build"
+    ],
+    "modelPath": "./models/computer.glb"
+  }
+]

@@ -27,26 +27,28 @@
     ],
     "modelPath": "./models/computer.glb"
   },
-    {
+  {
     "id": 3,
     "src": "https://fragstore.ru/images/detailed/59/razer-viper-2-1000x1000.jpg",
     "title": "Компьютерная мышь Razer Viper, чёрная",
     "text": "Скидка 30% на весь ассортимент!",
     "category": "комплектующие",
     "discount": 30,
-    "promoCodes": ["sale30", "saleAll"],
+    "promoCodes": [
+      "sale30",
+      "saleAll"
+    ],
     "modelPath": "./models/computer.glb"
   },
-
   {
     "id": 4,
     "src": "https://hiper-power.com/upload/iblock/fde/WeChat%20Image_20200505084437.jpg",
     "title": "Вентилятор для корпуса HIPER HCF1251-03-RGB",
     "text": "",
-    "category": "акции",
-    "discount": 5,
+    "category": "комплектующие",
+    "discount": 0,
     "promoCodes": [
-      "fan"
+      "present"
     ],
     "modelPath": "./models/computer.glb"
   },
@@ -58,8 +60,8 @@
     "category": "акции",
     "discount": 30,
     "promoCodes": [
-      "PC",
-      "build"
+      "free",
+      "delivery"
     ],
     "modelPath": "./models/computer.glb"
   }
