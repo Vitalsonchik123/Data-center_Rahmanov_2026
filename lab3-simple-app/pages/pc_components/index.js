@@ -1,5 +1,5 @@
 import { HeaderComponent } from "../../components/header/index.js";
-import { ProductComponent } from "../../components/product/index.js";
+import { ProductComponent } from "../../components/pc_components/index.js";
 import { ThreeModelComponent } from "../../components/3Dmodel/index.js";
 import { MainPage } from "../main/index.js";
 import { OrdersPage } from "../orders/index.js";
@@ -20,7 +20,7 @@ export class ProductPage {
         return `
             <div id="product-page" class="container py-3">
                 <div class="mb-3">
-                    <button id="back-button" class="btn btn-orange">Назад к акциям</button>
+                    <button id="back-button" class="btn btn-orange">Назад к услугам</button>
                 </div>
                 <div class="row">
                     <div class="col-md-6">

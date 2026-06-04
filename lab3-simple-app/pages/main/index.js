@@ -1,6 +1,6 @@
 import { HeaderComponent } from "../../components/header/index.js";
-import { ProductCardComponent } from "../../components/product-card/index.js";
-import { ProductPage } from "../product/index.js";
+import { ProductCardComponent } from "../../components/pc_components-card/index.js";
+import { ProductPage } from "../pc_components/index.js";
 import { EditPage } from "../edit/index.js";
 import { OrdersPage } from "../orders/index.js";
 import { ajax } from "../../modules/ajax.js";
@@ -29,7 +29,7 @@ export class MainPage {
                             <button id="search-button" class="btn btn-success w-100"> Поиск</button>
                         </div>
                         <div class="col-md-5 text-end">
-                            <button id="add-button" class="btn btn-orange w-100"> Добавить товар</button>
+                            <button id="add-button" class="btn btn-orange w-100"> Добавить услугу</button>
                         </div>
                     </div>
                     <div class="row mb-4">
