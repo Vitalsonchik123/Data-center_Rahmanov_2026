@@ -14,13 +14,13 @@ if (!fs.existsSync(path.dirname(dataPath))) {
 }
 
 // Загрузка данных из файла или создание начальных
-let stocks = [];
+let dataCenterItems = [];
 try {
     const rawData = fs.readFileSync(dataPath);
-    stocks = JSON.parse(rawData);
+    dataCenterItems = JSON.parse(rawData);
 } catch (err) {
     // Если файла нет, создаём начальные данные (с комментариями)
-    stocks = [
+    dataCenterItems = [
         {
             id: 1,
             src: "https://3dnews.ru/assets/external/illustrations/2014/12/29/907415/ASUS-PQ321QE.jpg",
@@ -84,7 +84,7 @@ try {
 }
 
 function saveData() {
-    fs.writeFileSync(dataPath, JSON.stringify(stocks, null, 2));
+    fs.writeFileSync(dataPath, JSON.stringify(dataCenterItems, null, 2));
 }
 
 // CORS закомментирован (для ЛР5 требуется расширение, для ЛР6 не нужен)
@@ -100,35 +100,35 @@ app.use(express.json());
 // Раздача статики (собранный фронтенд из папки public)
 app.use(express.static(path.join(__dirname, '../public')));
 
-// GET /stocks – список всех карточек (с поддержкой фильтрации по названию)
+// GET /datacenter – список всех карточек (с поддержкой фильтрации по названию)
 app.get('/datacenter', (req, res) => {
     const search = req.query.search;
-    let result = stocks;
+    let result = dataCenterItems;
     if (search && search.trim() !== '') {
         const searchLower = search.toLowerCase();
-        result = stocks.filter(stock =>
-            stock.title && stock.title.toLowerCase().includes(searchLower)
+        result = dataCenterItems.filter(item =>
+            item.title && item.title.toLowerCase().includes(searchLower)
         );
     }
     res.json(result);
 });
 
-// GET /stocks/:id – одна карточка (включая комментарии)
+// GET /datacenter/:id – одна карточка (включая комментарии)
 app.get('/datacenter/:id', (req, res) => {
     const id = parseInt(req.params.id);
-    const stock = stocks.find(s => s.id === id);
-    if (stock) res.json(stock);
+    const item = dataCenterItems.find(i => i.id === id);
+    if (item) res.json(item);
     else res.status(404).json({ error: "Not found" });
 });
 
-// POST /stocks – создание новой карточки
+// POST /datacenter – создание новой карточки
 app.post('/datacenter', (req, res) => {
     const { title, text, src, category, discount, promoCodes, modelPath } = req.body;
     if (!title || !text) {
         return res.status(400).json({ error: "Missing required fields: title, text" });
     }
-    const newId = stocks.length ? Math.max(...stocks.map(s => s.id)) + 1 : 1;
-    const newStock = {
+    const newId = dataCenterItems.length ? Math.max(...dataCenterItems.map(i => i.id)) + 1 : 1;
+    const newItem = {
         id: newId,
         title,
         text,
@@ -137,49 +137,49 @@ app.post('/datacenter', (req, res) => {
         discount: discount !== undefined ? discount : 0,
         promoCodes: promoCodes ? (Array.isArray(promoCodes) ? promoCodes : promoCodes.split(',').map(s => s.trim())) : [],
         modelPath: modelPath || "./models/computer.glb",
-        comments: []   // новый массив комментариев
+        comments: []
     };
-    stocks.push(newStock);
+    dataCenterItems.push(newItem);
     saveData();
-    res.status(201).json(newStock);
+    res.status(201).json(newItem);
 });
 
-// PATCH /stocks/:id – обновление карточки
+// PATCH /datacenter/:id – обновление карточки
 app.patch('/datacenter/:id', (req, res) => {
     const id = parseInt(req.params.id);
-    const index = stocks.findIndex(s => s.id === id);
+    const index = dataCenterItems.findIndex(i => i.id === id);
     if (index === -1) return res.status(404).json({ error: "Not found" });
-    const updated = { ...stocks[index], ...req.body };
+    const updated = { ...dataCenterItems[index], ...req.body };
     if (req.body.promoCodes && typeof req.body.promoCodes === 'string') {
         updated.promoCodes = req.body.promoCodes.split(',').map(s => s.trim());
     }
-    stocks[index] = updated;
+    dataCenterItems[index] = updated;
     saveData();
     res.json(updated);
 });
 
-// DELETE /stocks/:id – удаление карточки
+// DELETE /datacenter/:id – удаление карточки
 app.delete('/datacenter/:id', (req, res) => {
     const id = parseInt(req.params.id);
-    const index = stocks.findIndex(s => s.id === id);
+    const index = dataCenterItems.findIndex(i => i.id === id);
     if (index === -1) return res.status(404).json({ error: "Not found" });
-    stocks.splice(index, 1);
+    dataCenterItems.splice(index, 1);
     saveData();
     res.status(204).send();
 });
 
-// POST /stocks/:id/comments – добавить комментарий к карточке
+// POST /datacenter/:id/comments – добавить комментарий к карточке
 app.post('/datacenter/:id/comments', (req, res) => {
     const id = parseInt(req.params.id);
-    const stock = stocks.find(s => s.id === id);
-    if (!stock) return res.status(404).json({ error: "Stock not found" });
+    const item = dataCenterItems.find(i => i.id === id);
+    if (!item) return res.status(404).json({ error: "Item not found" });
 
     const { author, text } = req.body;
     if (!author || !text) {
         return res.status(400).json({ error: "Author and text are required" });
     }
 
-    const comments = stock.comments || [];
+    const comments = item.comments || [];
     const newId = comments.length ? Math.max(...comments.map(c => c.id)) + 1 : 1;
     const newComment = {
         id: newId,
@@ -187,7 +187,7 @@ app.post('/datacenter/:id/comments', (req, res) => {
         text,
         createdAt: new Date().toISOString()
     };
-    stock.comments = [...comments, newComment];
+    item.comments = [...comments, newComment];
     saveData();
     res.status(201).json(newComment);
 });
