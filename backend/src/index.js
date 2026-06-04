@@ -19,81 +19,12 @@ try {
     const rawData = fs.readFileSync(dataPath);
     dataCenterItems = JSON.parse(rawData);
 } catch (err) {
-    // Если файла нет, создаём начальные данные (с комментариями)
-    dataCenterItems = [
-        {
-            id: 1,
-            src: "https://3dnews.ru/assets/external/illustrations/2014/12/29/907415/ASUS-PQ321QE.jpg",
-            title: "Монитор Maifan MF238-1, чёрный",
-            text: "Скидка до 50% на все монитор!",
-            category: "комплектующие",
-            discount: 50,
-            promoCodes: ["sale", "sale50", "screen"],
-            modelPath: "./models/computer.glb",
-            comments: [
-                { id: 1, author: "Алексей", text: "Отличная акция! Уже присмотрел монитор.", createdAt: new Date().toISOString() },
-                { id: 2, author: "Мария", text: "А распространяется на игровые мониторы?", createdAt: new Date().toISOString() }
-            ]
-        },
-        {
-            id: 2,
-            src: "https://s.a-5.ru/i/file/161/7/4f/73/4f73f292cd213e35.jpg",
-            title: "Флешка JUST Зелёная 16Гб",
-            text: "Купи 2 флешки - получи 3-ю в подарок!",
-            category: "аксессуары",
-            discount: 10,
-            promoCodes: ["flash", "sale10", "drive"],
-            modelPath: "./models/computer.glb",
-            comments: []
-        },
-        {
-            id: 3,
-            src: "https://fragstore.ru/images/detailed/59/razer-viper-2-1000x1000.jpg",
-            title: "Компьютерная мышь Razer Viper, чёрная",
-            text: "Скидка 30% на весь ассортимент!",
-            category: "комплектующие",
-            discount: 30,
-            promoCodes: ["sale30", "saleAll"],
-            modelPath: "./models/computer.glb",
-            comments: []
-        },
-        {
-            id: 4,
-            src: "https://hiper-power.com/upload/iblock/fde/WeChat%20Image_20200505084437.jpg",
-            title: "Вентилятор для корпуса HIPER HCF1251-03-RGB",
-            text: "",
-            category: "комплектующие",
-            discount: 0,
-            promoCodes: ["present"],
-            modelPath: "./models/computer.glb",
-            comments: []
-        },
-        {
-            id: 5,
-            src: "https://hiper-power.com/upload/iblock/4c4/HG302%20(1)_1000x1000.jpg",
-            title: "Игровой корпус HIPER HG302 SHADOW",
-            text: "На 30% дешевле, при заказе готовой сборки!",
-            category: "акции",
-            discount: 30,
-            promoCodes: ["free", "delivery"],
-            modelPath: "./models/computer.glb",
-            comments: []
-        }
-    ];
-    saveData();
+
 }
 
 function saveData() {
     fs.writeFileSync(dataPath, JSON.stringify(dataCenterItems, null, 2));
 }
-
-// CORS закомментирован (для ЛР5 требуется расширение, для ЛР6 не нужен)
-// app.use((req, res, next) => {
-//     res.header('Access-Control-Allow-Origin', '*');
-//     res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH');
-//     res.header('Access-Control-Allow-Headers', 'Content-Type');
-//     next();
-// });
 
 app.use(express.json());
 
